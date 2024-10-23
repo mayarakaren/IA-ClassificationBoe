@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 # Carregar o modelo treinado
-model = load_model('bovino_classification_model.keras')
+model = load_model('bovino_classification_model.h5')
 
 # Classes do modelo
 class_labels = ['Dermatite Nodular', 'Berne', 'Saudável']
