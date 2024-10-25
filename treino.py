@@ -6,5 +6,7 @@ def train_model(model, train_gen, val_gen, epochs=100):
     checkpoint = ModelCheckpoint('bovino_classification_model.h5', monitor='val_loss', save_best_only=True, mode='min', save_format='h5')
 
     history = model.fit(train_gen, epochs=epochs, validation_data=val_gen, callbacks=[early_stopping, checkpoint])
-
+    # Após o treinamento, salve manualmente o modelo no formato .h5
+    model.save('bovino_classification_model.h5')
+    
     return history
