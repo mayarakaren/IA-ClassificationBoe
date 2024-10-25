@@ -7,7 +7,11 @@ import os
 app = Flask(__name__)
 
 # Carregar o modelo treinado
-model = load_model('bovino_classification_model.h5')
+try:
+    model = load_model('bovino_classification_model.keras')
+except Exception as e:
+    print(f"Erro ao carregar o modelo: {e}")
+    exit(1)
 
 # Classes do modelo
 class_labels = ['Dermatite Nodular', 'Berne', 'Saudável']
