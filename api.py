@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 # Carregar o modelo treinado
 try:
-    model = load_model('bovino_classification_model.keras')
+    model = load_model('bovino_classification_model.h5')
 except Exception as e:
     print(f"Erro ao carregar o modelo: {e}")
     exit(1)
