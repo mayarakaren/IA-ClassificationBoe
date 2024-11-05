@@ -1,11 +1,13 @@
 from tensorflow.keras import layers, models, regularizers
 import tensorflow as tf
 
+@tf.keras.utils.register_keras_serializable()
 def thresholding(x, threshold=0.5):
     """Aplica limiarização para tornar as imagens binárias."""
     x = tf.clip_by_value(x, 0, 1)
     return tf.where(x > threshold, 1.0, 0.0)
 
+@tf.keras.utils.register_keras_serializable()
 def crop_and_roi(x):
     """Aplica um recorte central para focar em regiões de interesse."""
     return tf.image.central_crop(x, central_fraction=0.7)
