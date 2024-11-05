@@ -11,6 +11,9 @@ def thresholding(x, threshold=0.5):
 def crop_and_roi(x):
     """Aplica um recorte central para focar em regiões de interesse."""
     return tf.image.central_crop(x, central_fraction=0.7)
+    
+# Adicione 'crop_and_roi' aos objetos personalizados
+get_custom_objects().update({'crop_and_roi': crop_and_roi})
 
 def build_cnn(input_shape):
     """Constrói a parte CNN do modelo."""
