@@ -1,4 +1,5 @@
 from tensorflow.keras import layers, models, regularizers
+from tensorflow.keras.utils import get_custom_objects
 import tensorflow as tf
 
 @tf.keras.utils.register_keras_serializable()
