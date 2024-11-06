@@ -1,7 +1,6 @@
 from preprocessamento import preprocess_images
 from modelo import build_cnn, combine_models
 from treino import train_model
-from avaliacao import salvar_metricas_e_previsoes
 import config
 
 def main():
@@ -14,9 +13,6 @@ def main():
 
     # Treinamento
     history = train_model(model, train_gen, test_gen, config.epochs)
-
-    # Avaliação e salvamento das métricas
-    salvar_metricas_e_previsoes(model, test_gen, history, train_gen.class_indices)
 
 if __name__ == '__main__':
     main()

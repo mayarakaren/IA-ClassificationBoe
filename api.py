@@ -16,7 +16,7 @@ except Exception as e:
     exit(1)
 
 # Classes do modelo
-class_labels = ['Dermatite Nodular', 'Berne', 'Saudável']
+class_labels = ['Berne', 'Dermatite Nodular', 'Saudável']
 
 def preprocess_image(img_path):
     """Carrega e pré-processa a imagem antes de passar para o modelo."""
