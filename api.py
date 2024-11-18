@@ -3,7 +3,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import os
-from modelo import thresholding, crop_and_roi  # Importe as funções personalizadas
+from modelo import thresholding, crop_and_roi  # Importa as funções personalizadas
 
 app = Flask(__name__)
 
